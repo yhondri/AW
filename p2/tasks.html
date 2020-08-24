@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Gestor de tareas</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="tasksScreen.css" media="screen">
+    <link rel="icon" href="recursos/task-planning.png" type="img/png">
+    <script src="tasks.js"></script>
+</head>
+
+<body>
+
+    <div id="accountHeader">
+        <p>PRUEBA POSICIONAMIENTO</p>
+        <div id="acccountContent">
+            <img id="accountImage" src="recursos/user.png" />
+            <div id="accountData">
+                <p>usuario@gmail.com</p>
+                <a href="">Desconectar</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskData">
+        <ul id="taskList">
+            <li>
+                <div class="task">
+                    <div class="taskContentLeft">
+                        <p>Preparar práctica de AW</p>
+                        <p class="taskTag">AW</p>
+                        <p class="taskTag">Práctica</p>
+                    </div>
+                    <a class="finishTask" href="">Finalizar tarea</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="task">
+                    <div class="taskContentLeft">
+                        <p>Preparar práctica de AW</p>
+                        <p class="taskTag">AW</p>
+                        <p class="taskTag">Práctica</p>
+                    </div>
+                    <a class="finishTask" href="">Finalizar tarea</a>
+                </div>
+            </li>
+        </ul>
+
+        <form id="newTask" action="newTask" method="GET">
+            <input type="text" name="task" id="barra">
+            <a id="add" href="">Añadir</a>
+        </form>
+        <div id="deleteTask">
+            <a href="" id="eliminarTarea">Eliminar Tareas Completadas</a>
+        </div>
+    </div>
+</body>
+
+</html>

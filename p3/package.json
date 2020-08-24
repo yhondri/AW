@@ -1,0 +1,19 @@
+{
+  "name": "com.aw.practicavoluntaria",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AW",
+    "Práctica",
+    "voluntaria"
+  ],
+  "author": "Yhondri Acosta Novas",
+  "license": "MIT",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}

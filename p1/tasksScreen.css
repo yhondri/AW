@@ -78,8 +78,21 @@
     margin-left: auto;
     margin-right: auto;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+#barra {
+    width: 75%;
+    height: 75%;
+    margin-right: 10px;
+}
+
+#add {
+    border: solid 1px cadetblue;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: lightgoldenrodyellow;
 }
 
 #deleteTask {
