@@ -6,7 +6,16 @@ const config = require("./config");
 const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
-const fs = require("fs");
+const session = require("express-session");
+const mysqlSession = require("express-mysql-session");
+const MySQLStore = mysqlSession(session);
+const sessionStore = new MySQLStore(config.mysqlConfig);
+const middlewareSession = session({
+    saveUninitialized: false,
+    secret: "foobar34",
+    resave: false,
+    store: sessionStore
+});
 
 const app = express();
 // La variable ficherosEstaticos guarda el // nombre del directorio donde se encuentran // los ficheros estáticos:
@@ -22,13 +31,12 @@ app.use(bodyParser.urlencoded({
 //Routers
 var router = express.Router();
 const taskRouter = require('./routes/taskRouter');
-// app.use("/", taskRouter);
+const loginRouter = require('./routes/LoginRouter');
 
-
-app.get("/", function(request, response) {
-    response.redirect("/login.html");
-});
-
+app.use(middlewareSession);
+app.use("/", loginRouter);
+app.use("/login", loginRouter);
+app.use("/tasks", taskRouter);
 
 // Arrancar el servidor
 app.listen(config.port, function(err) {
